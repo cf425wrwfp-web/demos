@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>茶屋Matcha ｜ 100% ORGANIC MATCHA CAFE ・抹茶スタンド</title>
+<meta name="description" content="茶屋町のオーガニック抹茶スタンド「茶屋Matcha」。有機栽培100%のオーガニック抹茶を、鹿児島と京都宇治の2種類から選んで。目の前で点てたての一杯を、HOTでもICEでも。">
+<meta property="og:title" content="茶屋Matcha ｜ 100% ORGANIC MATCHA CAFE">
+<meta property="og:description" content="有機栽培100%のオーガニック抹茶を、鹿児島と京都宇治の2種類から。点てたての一杯を茶屋町で。">
+<meta property="og:type" content="website">
+<style>
+/* ============ base ============ */
+:root{
+  --matcha-900:#20301c;
+  --matcha-800:#2f4526;
+  --matcha-700:#3f5b34;
+  --matcha-600:#587a44;
+  --matcha-500:#7a9c57;
+  --matcha-300:#a9c47f;
+  --matcha-100:#e4ecd6;
+  --kibi:#c98b3f;
+  --ichigo:#c2566a;
+  --paper:#f7f5ef;
+  --paper-2:#fffefa;
+  --ink:#22251f;
+  --ink-soft:#5c6157;
+  --line:rgba(63,91,52,.16);
+  --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","Times New Roman",serif;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shadow:0 1px 2px rgba(32,48,28,.04),0 8px 24px -12px rgba(32,48,28,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.9;
+  font-feature-settings:"palt" 1;letter-spacing:.02em;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.4;letter-spacing:.06em;margin:0}
+p{margin:0}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+.en{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+
+/* ============ section heading ============ */
+.sec{padding:clamp(64px,9vw,120px) 0}
+.sec-head{text-align:center;margin-bottom:clamp(36px,5vw,60px)}
+.sec-head .label{
+  display:inline-flex;align-items:center;gap:.7em;
+  font-size:11px;color:var(--matcha-600);margin-bottom:14px;
+}
+.sec-head .label::before,.sec-head .label::after{
+  content:"";width:26px;height:1px;background:var(--matcha-300)
+}
+.sec-head h2{font-size:clamp(24px,4.2vw,34px);color:var(--matcha-900)}
+.sec-head .sub{margin-top:14px;font-size:14px;color:var(--ink-soft);line-height:2}
+
+/* ============ leaf motif ============ */
+.leaf{width:18px;height:18px;flex:none;fill:var(--matcha-500)}
+
+/* ============ header ============ */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,245,239,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s;
+}
+header.stuck{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:baseline;gap:.5em;font-family:var(--serif);font-size:19px;letter-spacing:.1em;color:var(--matcha-900);text-decoration:none}
+.brand small{font-family:"Helvetica Neue",Arial,sans-serif;font-size:9px;letter-spacing:.24em;color:var(--matcha-600)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:12.5px}
+.nav a{text-decoration:none;color:var(--ink-soft);transition:color .2s;position:relative}
+.nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--matcha-600);transition:width .3s}
+.nav a:hover{color:var(--matcha-700)}
+.nav a:hover::after{width:100%}
+@media(max-width:760px){.nav ul{display:none}}
+
+/* ============ hero ============ */
+.hero{position:relative;overflow:hidden;padding:clamp(56px,10vw,104px) 0 clamp(56px,8vw,88px)}
+.hero::before{
+  content:"";position:absolute;inset:auto -10% -40% auto;width:min(560px,80vw);aspect-ratio:1;
+  background:radial-gradient(circle at 40% 40%,rgba(122,156,87,.28),rgba(122,156,87,0) 68%);
+  border-radius:50%;pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;top:-16%;left:-14%;width:min(460px,70vw);aspect-ratio:1;
+  background:radial-gradient(circle at 60% 60%,rgba(228,236,214,.9),rgba(228,236,214,0) 70%);
+  border-radius:50%;pointer-events:none;
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;text-align:left}}
+.badge{
+  display:inline-flex;align-items:center;gap:.6em;padding:7px 16px;border-radius:999px;
+  background:var(--matcha-700);color:#fff;font-size:10.5px;letter-spacing:.2em;
+}
+.hero h1{margin:22px 0 0;font-size:clamp(38px,8.4vw,72px);letter-spacing:.04em;color:var(--matcha-900);line-height:1.18}
+.hero h1 .ja{display:block}
+.hero h1 .sub-en{display:block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:clamp(11px,2.4vw,14px);letter-spacing:.34em;color:var(--matcha-600);margin-top:18px;font-weight:400}
+.hero .lead{margin-top:26px;font-size:clamp(14px,1.7vw,16px);line-height:2.2;color:var(--ink-soft);max-width:30em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;padding:14px 28px;border-radius:999px;
+  font-size:13px;letter-spacing:.1em;text-decoration:none;transition:.25s;border:1px solid var(--matcha-700);
+}
+.btn-fill{background:var(--matcha-700);color:#fff}
+.btn-fill:hover{background:var(--matcha-800);transform:translateY(-2px)}
+.btn-out{color:var(--matcha-700)}
+.btn-out:hover{background:var(--matcha-100);transform:translateY(-2px)}
+
+/* rating card */
+.rating{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:20px;
+  padding:clamp(26px,3.4vw,38px);box-shadow:var(--shadow);
+}
+.rating .score{display:flex;align-items:flex-end;gap:14px}
+.rating .num{font-family:var(--serif);font-size:56px;line-height:1;color:var(--matcha-800)}
+.stars{color:#e8a33d;font-size:15px;letter-spacing:.16em}
+.rating .cnt{font-size:11.5px;color:var(--ink-soft);letter-spacing:.06em}
+.rating hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.mini-list{display:grid;gap:12px;font-size:13px;color:var(--ink-soft)}
+.mini-list div{display:flex;gap:10px;align-items:flex-start}
+.mini-list b{color:var(--matcha-800);font-weight:600;flex:none;width:5.2em;font-size:12px;letter-spacing:.08em}
+
+/* ============ marquee ============ */
+.strip{background:var(--matcha-800);color:#e9efdd;padding:13px 0;overflow:hidden;white-space:nowrap}
+.strip-track{display:inline-flex;gap:48px;animation:slide 34s linear infinite;font-size:11px;letter-spacing:.26em}
+.strip-track span{display:inline-flex;align-items:center;gap:48px}
+.strip-track span::after{content:"◆";color:var(--matcha-500);font-size:7px}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+/* ============ concept ============ */
+#concept{background:var(--paper-2)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
+@media(max-width:820px){.cards{grid-template-columns:1fr}}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(26px,3vw,34px);transition:transform .3s,box-shadow .3s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .no{font-family:"Helvetica Neue",Arial,sans-serif;font-size:10px;letter-spacing:.24em;color:var(--matcha-500)}
+.card h3{margin:12px 0 12px;font-size:19px;color:var(--matcha-900)}
+.card p{font-size:13.5px;line-height:2.05;color:var(--ink-soft)}
+
+/* ============ two matcha ============ */
+.origins{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,24px)}
+@media(max-width:760px){.origins{grid-template-columns:1fr}}
+.origin{
+  position:relative;border-radius:20px;padding:clamp(28px,3.6vw,40px);
+  color:#fff;overflow:hidden;box-shadow:var(--shadow);
+}
+.origin.k{background:linear-gradient(150deg,#6f9450,#4a6d38)}
+.origin.u{background:linear-gradient(150deg,#3d5c31,#22331b)}
+.origin::after{
+  content:"";position:absolute;right:-40px;bottom:-60px;width:200px;height:200px;border-radius:50%;
+  background:rgba(255,255,255,.07);
+}
+.origin .pin{font-size:10px;letter-spacing:.24em;opacity:.75}
+.origin h3{font-size:clamp(26px,3.6vw,34px);margin:10px 0 4px;color:#fff}
+.origin .romaji{font-family:"Helvetica Neue",Arial,sans-serif;font-size:10.5px;letter-spacing:.24em;opacity:.7}
+.origin .taste{margin-top:20px;font-size:14.5px;line-height:2;position:relative}
+.origin .bars{margin-top:22px;display:grid;gap:11px;position:relative}
+.bar{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.1em}
+.bar .t{width:3.6em;flex:none;opacity:.8}
+.bar .track{flex:1;height:3px;background:rgba(255,255,255,.22);border-radius:2px;overflow:hidden}
+.bar .fill{height:100%;background:#fff;border-radius:2px;transform-origin:left;transform:scaleX(0);transition:transform 1.1s cubic-bezier(.2,.7,.3,1)}
+.in-view .bar .fill{transform:scaleX(var(--v))}
+
+/* ============ menu ============ */
+#menu{background:var(--paper-2)}
+.mgroup{margin-bottom:clamp(38px,5vw,56px)}
+.mgroup-head{display:flex;align-items:center;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.mgroup-head h3{font-size:15px;letter-spacing:.2em;color:var(--matcha-800);font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700}
+.mgroup-head .note{margin-left:auto;font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;text-align:right;line-height:1.7}
+@media(max-width:640px){.mgroup-head{flex-wrap:wrap}.mgroup-head .note{margin-left:0;width:100%;text-align:left}}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:2px 40px}
+@media(max-width:760px){.items{grid-template-columns:1fr}}
+.item{display:flex;align-items:baseline;gap:10px;padding:15px 2px;border-bottom:1px dashed rgba(63,91,52,.14)}
+.item .n{font-size:15px;color:var(--ink)}
+.item .n small{display:block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:9.5px;letter-spacing:.16em;color:var(--matcha-600);margin-top:3px}
+.item .n em{display:block;font-style:normal;font-size:12px;color:var(--ink-soft);margin-top:6px;line-height:1.8}
+.item .dots{flex:1;border-bottom:1px dotted rgba(63,91,52,.3);transform:translateY(-4px);min-width:14px}
+.item .p{font-family:var(--serif);font-size:15px;color:var(--matcha-800);white-space:nowrap;text-align:right}
+.item .p span{display:block;font-family:var(--sans);font-size:10.5px;color:var(--ink-soft);letter-spacing:.06em}
+.tag{
+  display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:9.5px;
+  letter-spacing:.14em;vertical-align:middle;
+}
+.tag.hot{background:#f6e7dc;color:#a9552b}
+.tag.ice{background:#e0ecf2;color:#3a6f8a}
+.tag.new{background:var(--matcha-100);color:var(--matcha-700)}
+.tag.pop{background:#f7e9ec;color:var(--ichigo)}
+
+/* customize */
+.custom{background:var(--matcha-700);border-radius:20px;padding:clamp(28px,3.6vw,40px);color:#eef3e5}
+.custom h3{color:#fff;font-size:15px;letter-spacing:.2em;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700}
+.custom .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 34px;margin-top:20px}
+@media(max-width:760px){.custom .cgrid{grid-template-columns:1fr}}
+.custom .item{border-bottom-color:rgba(255,255,255,.2)}
+.custom .item .n{color:#fff;font-size:14px}
+.custom .item .n small{color:rgba(255,255,255,.6)}
+.custom .item .p{color:#fff}
+.custom .dots{border-bottom-color:rgba(255,255,255,.28)}
+
+/* ============ reviews ============ */
+.rgrid{columns:3 280px;column-gap:clamp(16px,2.2vw,24px)}
+.review{
+  break-inside:avoid;background:var(--paper-2);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(24px,2.6vw,30px);margin-bottom:clamp(16px,2.2vw,24px);box-shadow:var(--shadow);
+}
+.review .stars{font-size:12px;letter-spacing:.2em}
+.review p{margin-top:14px;font-size:13.5px;line-height:2.1;color:var(--ink-soft)}
+.review .hl{color:var(--matcha-700);font-weight:600;background:linear-gradient(transparent 62%,var(--matcha-100) 62%)}
+.review .who{margin-top:18px;font-size:11px;letter-spacing:.1em;color:var(--matcha-600)}
+
+/* ============ info ============ */
+#info{background:var(--matcha-900);color:#dfe6d3}
+#info .sec-head h2{color:#fff}
+#info .sec-head .label{color:var(--matcha-300)}
+#info .sec-head .label::before,#info .sec-head .label::after{background:rgba(169,196,127,.5)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,32px)}
+@media(max-width:860px){.info-grid{grid-template-columns:1fr}}
+.panel{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:clamp(24px,3vw,34px)}
+.panel h3{font-size:13px;letter-spacing:.2em;color:#fff;font-family:"Helvetica Neue",Arial,sans-serif;font-weight:700;margin-bottom:18px}
+.dl{display:grid;grid-template-columns:6.5em 1fr;gap:14px 16px;font-size:13.5px;line-height:1.95}
+.dl dt{color:var(--matcha-300);font-size:12px;letter-spacing:.1em;margin:0}
+.dl dd{margin:0;color:#eaf0e1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  display:inline-flex;align-items:center;gap:.45em;padding:7px 14px;border-radius:999px;
+  background:rgba(255,255,255,.08);font-size:12px;letter-spacing:.05em;
+}
+.chip::before{content:"✓";color:var(--matcha-300);font-size:11px}
+.chip.no{opacity:.4}
+.chip.no::before{content:"✕";color:#c9a0a0}
+.panel + .panel{margin-top:clamp(20px,3vw,32px)}
+.foot-note{margin-top:28px;font-size:11.5px;color:rgba(223,230,211,.6);line-height:2}
+
+/* ============ footer ============ */
+footer{background:var(--matcha-900);color:rgba(223,230,211,.7);padding:34px 0 44px;border-top:1px solid rgba(255,255,255,.1);text-align:center}
+footer .fbrand{font-family:var(--serif);font-size:20px;letter-spacing:.14em;color:#fff}
+footer .fen{font-size:9.5px;letter-spacing:.26em;color:var(--matcha-300);margin-top:8px}
+footer .copy{font-size:11px;margin-top:22px;letter-spacing:.06em}
+
+/* ============ reveal ============ */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.rv.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a class="brand" href="#top">茶屋<span>Matcha</span><small>Chaya</small></a>
+    <nav>
+      <ul>
+        <li><a href="#concept">こだわり</a></li>
+        <li><a href="#origin">2種の抹茶</a></li>
+        <li><a href="#menu">メニュー</a></li>
+        <li><a href="#voice">口コミ</a></li>
+        <li><a href="#info">店舗情報</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="badge en">100% Organic Matcha</span>
+      <h1>
+        <span class="ja">点てたてを、</span>
+        <span class="ja">茶屋町で。</span>
+        <span class="sub-en">Chaya Matcha ─ Organic Matcha Stand</span>
+      </h1>
+      <p class="lead">
+        有機栽培のオーガニック抹茶だけを使った、抹茶スタンド。<br>
+        鹿児島と京都宇治、産地の違う2種類の抹茶から選べて、<br>
+        目の前で茶筅を振って一杯ずつお点てします。<br>
+        HOTもICEも、テイクアウトもイートインも。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-fill" href="#menu">メニューを見る</a>
+        <a class="btn btn-out" href="#info">店舗情報</a>
+      </div>
+    </div>
+
+    <aside class="rating rv">
+      <div class="score">
+        <div class="num">4.9</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="cnt">Google クチコミ 240件</div>
+        </div>
+      </div>
+      <hr>
+      <div class="mini-list">
+        <div><b>抹茶</b><span>鹿児島 ／ 京都宇治 の2種類から</span></div>
+        <div><b>ミルク</b><span>牛乳 ／ オーガニックオーツミルク</span></div>
+        <div><b>甘み</b><span>きび糖使用・きび糖なしも選べます</span></div>
+        <div><b>予算</b><span>￥1〜1,000</span></div>
+        <div><b>利用</b><span>イートイン ／ テイクアウト ／ 宅配</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>100% ORGANIC MATCHA</span><span>KAGOSHIMA &amp; KYOTO UJI</span><span>HOT &amp; ICE ALL YEAR</span><span>OAT MILK AVAILABLE</span><span>TAKEOUT &amp; EAT-IN</span>
+    <span>100% ORGANIC MATCHA</span><span>KAGOSHIMA &amp; KYOTO UJI</span><span>HOT &amp; ICE ALL YEAR</span><span>OAT MILK AVAILABLE</span><span>TAKEOUT &amp; EAT-IN</span>
+  </div>
+</div>
+
+<!-- ================= CONCEPT ================= -->
+<section class="sec" id="concept">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label en">Concept</span>
+      <h2>抹茶が、主役でいられるように。</h2>
+      <p class="sub">派手さより、一杯の純度。<br>素材と、点て方と、居心地。茶屋Matchaが大切にしている3つのこと。</p>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="no en">01</div>
+        <h3>100%オーガニック</h3>
+        <p>使うのは有機栽培のオーガニック抹茶だけ。甘みにはきび糖を使い、素材の香りを消さない配合に。「甘さ控えめ」ではなく「抹茶がちゃんと香る」一杯を目指しています。</p>
+      </div>
+      <div class="card rv">
+        <div class="no en">02</div>
+        <h3>目の前で、茶筅を振る</h3>
+        <p>カウンター越しに、一杯ずつ茶筅で点てるスタイル。点てたての泡と香りは、その場でしか味わえません。産地による味の違いも、その場でご説明します。</p>
+      </div>
+      <div class="card rv">
+        <div class="no en">03</div>
+        <h3>大きな窓と、抜けた空間</h3>
+        <p>通りに向かって開いた大きな窓が目印。入りやすくて、落ち着ける。カウンターに腰かけて一杯だけ、も歓迎です。写真映えする明るさも自慢。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TWO MATCHA ================= -->
+<section class="sec" id="origin" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label en">Two Origins</span>
+      <h2>産地で選ぶ、2つの抹茶。</h2>
+      <p class="sub">同じ「抹茶」でも、育った土地で味わいはまるで違います。<br>どのドリンクも、鹿児島と京都宇治からお選びいただけます。</p>
+    </div>
+    <div class="origins">
+      <div class="origin k rv">
+        <div class="pin en">Origin 01 ／ 有機栽培</div>
+        <h3>鹿児島</h3>
+        <div class="romaji">Kagoshima</div>
+        <p class="taste">あっさりと洗練された味わい。<br>渋みがやわらかく、はじめての方や、ミルクと合わせて毎日飲みたい方に。</p>
+        <div class="bars">
+          <div class="bar"><span class="t">香り</span><span class="track"><span class="fill" style="--v:.72"></span></span></div>
+          <div class="bar"><span class="t">コク</span><span class="track"><span class="fill" style="--v:.55"></span></span></div>
+          <div class="bar"><span class="t">まろやか</span><span class="track"><span class="fill" style="--v:.9"></span></span></div>
+        </div>
+      </div>
+      <div class="origin u rv">
+        <div class="pin en">Origin 02 ／ 有機栽培</div>
+        <h3>京都宇治</h3>
+        <div class="romaji">Kyoto Uji</div>
+        <p class="taste">コクと深みのある味わい。<br>抹茶そのものを味わいたい日に。ピュア抹茶で飲むと違いがはっきり分かります。</p>
+        <div class="bars">
+          <div class="bar"><span class="t">香り</span><span class="track"><span class="fill" style="--v:.95"></span></span></div>
+          <div class="bar"><span class="t">コク</span><span class="track"><span class="fill" style="--v:.92"></span></span></div>
+          <div class="bar"><span class="t">まろやか</span><span class="track"><span class="fill" style="--v:.6"></span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section class="sec" id="menu">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label en">Menu</span>
+      <h2>お品書き</h2>
+      <p class="sub">価格はすべて税込表示です。HOT / ICE はどちらも同価格。<br>ご注文いただくメニューにより、提供の順番が前後することがございます。</p>
+    </div>
+
+    <!-- PURE -->
+    <div class="mgroup rv">
+      <div class="mgroup-head">
+        <svg class="leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 9 4 16c0 1.6.4 3 1 4 .6-3 2.4-6 6-8.6C8.6 13.8 7 16.6 6.6 20 14 20 20 14 20 4z"/></svg>
+        <h3>Pure Matcha</h3>
+        <div class="note">ミルクなしのストレート抹茶／甘みはきび糖・きび糖なしも選べます</div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="n">鹿児島<small>Kagoshima</small><em>あっさりと洗練された味わい</em></div><i class="dots"></i><div class="p">¥680<span>HOT / ICE</span></div></div>
+        <div class="item"><div class="n">京都宇治<small>Kyoto Uji</small><em>コクと深みのある味わい</em></div><i class="dots"></i><div class="p">¥780<span>HOT / ICE</span></div></div>
+        <div class="item"><div class="n">抹茶ソーダ<span class="tag pop">人気</span><small>Matcha Soda</small><em>オーガニック抹茶のすっきりソーダ割り</em></div><i class="dots"></i><div class="p">¥780 / ¥880<span>鹿児島 / 宇治</span></div></div>
+      </div>
+    </div>
+
+    <!-- LATTE -->
+    <div class="mgroup rv">
+      <div class="mgroup-head">
+        <svg class="leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 9 4 16c0 1.6.4 3 1 4 .6-3 2.4-6 6-8.6C8.6 13.8 7 16.6 6.6 20 14 20 20 14 20 4z"/></svg>
+        <h3>Matcha Latte</h3>
+        <div class="note">上質でやさしい甘さのプレミアム抹茶ラテ／牛乳・オーガニックオーツミルクから選べます</div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="n">鹿児島ラテ<small>Kagoshima Latte</small><em>自然の優しい抹茶を感じるやわらかラテ</em></div><i class="dots"></i><div class="p">¥780<span>HOT / ICE</span></div></div>
+        <div class="item"><div class="n">京都宇治ラテ<small>Kyoto Uji Latte</small><em>抹茶の味わいを感じる濃く深いラテ</em></div><i class="dots"></i><div class="p">¥880<span>HOT / ICE</span></div></div>
+        <div class="item"><div class="n">オーツミルク 鹿児島<small>Kagoshima Oat Latte</small><em>自然の優しい抹茶を感じるオーツラテ</em></div><i class="dots"></i><div class="p">¥880<span>HOT / ICE</span></div></div>
+        <div class="item"><div class="n">オーツミルク 京都宇治<small>Kyoto Uji Oat Latte</small><em>濃く深いオーガニックオーツミルクラテ</em></div><i class="dots"></i><div class="p">¥980<span>HOT / ICE</span></div></div>
+      </div>
+    </div>
+
+    <!-- SPECIAL -->
+    <div class="mgroup rv">
+      <div class="mgroup-head">
+        <svg class="leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 9 4 16c0 1.6.4 3 1 4 .6-3 2.4-6 6-8.6C8.6 13.8 7 16.6 6.6 20 14 20 20 14 20 4z"/></svg>
+        <h3>Special Matcha</h3>
+        <div class="note">季節と素材を掛け合わせた、茶屋Matchaならではの一杯</div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="n">いちご抹茶ラテ<span class="tag pop">人気</span><small>Strawberry Matcha Latte</small><em>てんさい糖いちごシロップと抹茶の絶妙な組み合わせ</em></div><i class="dots"></i><div class="p">¥950 / ¥1,050<span>鹿児島 / 宇治</span></div></div>
+        <div class="item"><div class="n">オレンジ抹茶ソーダ<small>Matcha Orange Honey Soda</small><em>広島県産無農薬オレンジとハチミツのスッキリさわやかソーダ</em></div><i class="dots"></i><div class="p">¥950 / ¥1,050<span>鹿児島 / 宇治</span></div></div>
+      </div>
+    </div>
+
+    <!-- MILK TEA -->
+    <div class="mgroup rv">
+      <div class="mgroup-head">
+        <svg class="leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 9 4 16c0 1.6.4 3 1 4 .6-3 2.4-6 6-8.6C8.6 13.8 7 16.6 6.6 20 14 20 20 14 20 4z"/></svg>
+        <h3>Japanese Milk Tea</h3>
+        <div class="note">抹茶以外の日本茶も。ほっと一息つきたい日に</div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="n">ほうじ茶玄米ミルクティ<small>Houji Genmai Cha Milk Tea</small><em>ほうじ玄米茶の香ばしい香り</em></div><i class="dots"></i><div class="p">¥650<span>HOT</span></div></div>
+        <div class="item"><div class="n">和紅茶ミルクティ<small>Japanese Black Milk Tea</small><em>なめらかでまろやかな香り</em></div><i class="dots"></i><div class="p">¥650<span>HOT</span></div></div>
+      </div>
+    </div>
+
+    <!-- SWEETS -->
+    <div class="mgroup rv">
+      <div class="mgroup-head">
+        <svg class="leaf" viewBox="0 0 24 24"><path d="M20 4C10 4 4 9 4 16c0 1.6.4 3 1 4 .6-3 2.4-6 6-8.6C8.6 13.8 7 16.6 6.6 20 14 20 20 14 20 4z"/></svg>
+        <h3>Sweets</h3>
+        <div class="note">抹茶の味を邪魔しない、お供の甘味。内容は時期により変わります</div>
+      </div>
+      <div class="items">
+        <div class="item"><div class="n">あんドーナツ<small>Anko Donut</small><em>抹茶の味を邪魔しない、口コミでも人気のお供</em></div><i class="dots"></i><div class="p">お問い合わせください<span>時期により変動</span></div></div>
+        <div class="item"><div class="n">ほうじ玄米茶氷<span class="tag new">季節</span><small>Houji Shaved Ice</small><em>エスプーマもトッピングできます</em></div><i class="dots"></i><div class="p">お問い合わせください<span>季節限定</span></div></div>
+      </div>
+    </div>
+
+    <!-- CUSTOMIZE -->
+    <div class="custom rv">
+      <h3>Customize ／ カスタマイズ</h3>
+      <div class="cgrid">
+        <div class="item"><div class="n">抹茶アイスクリーム<small>Matcha Ice Cream</small></div><i class="dots"></i><div class="p">+¥350</div></div>
+        <div class="item"><div class="n">抹茶ショット追加<small>Rich Matcha ／ 鹿児島</small></div><i class="dots"></i><div class="p">+¥150</div></div>
+        <div class="item"><div class="n">抹茶ショット追加<small>Rich Matcha ／ 宇治</small></div><i class="dots"></i><div class="p">+¥200</div></div>
+        <div class="item"><div class="n">オーツミルクに変更<small>Organic Oat Milk</small></div><i class="dots"></i><div class="p">+¥100</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec" id="voice" style="background:var(--matcha-100)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label en">Reviews</span>
+      <h2>いらしたお客さまの声</h2>
+      <p class="sub">Google クチコミ ★4.9 ／ 240件（一部を抜粋してご紹介しています）</p>
+    </div>
+    <div class="rgrid">
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <p>オーガニックのお抹茶🍵の美味しいドリンクが飲める<span class="hl">茶屋町の新しいスポット</span>✨ テイクアウトでも店内でも楽しめてオシャレで素敵なお店😋 抹茶🍵×オレンジ🍊×ソーダ🥤の組み合わせもスッキリしてて、美味しかったです😊 ドリンクはHOTのメニューもcoldのメニューもあるので一年中楽しめそうです🌟 また行きたいお店🍵💕</p>
+        <div class="who">Google クチコミより</div>
+      </div>
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <p>初めてきました。<span class="hl">落ち着いた空間で点てたての抹茶の美味しさ</span>を味わえて至福でした。<br>特にあんドーナツが、抹茶の味を邪魔しないけどちゃんと美味しいので一緒に食べてほしいです！</p>
+        <div class="who">Google クチコミより</div>
+      </div>
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <p>まずお店の名前が可愛い🩷 <span class="hl">大きな窓が印象的で、入りやすい雰囲気</span>も素敵です。有機栽培のオーガニック抹茶を使ったドリンクメニューが充実しています。HOTもICEもあるし、ミルクはオーツミルクも選べる🥛 ドーナツもありました🍩 産地によって、抹茶の味が違うことも知り勉強になりました🌿 立地も良いのでまた伺います🤍</p>
+        <div class="who">Google クチコミより</div>
+      </div>
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <p>店内は綺麗で落ち着ける空間でした。<span class="hl">目の前で茶筅を使ってドリンクを作ってくれます！</span> 本格的で、抹茶も二つの種類から選べるのでおすすめです。</p>
+        <div class="who">Google クチコミより</div>
+      </div>
+      <div class="review rv">
+        <div class="stars">★★★★★</div>
+        <p>とても落ち着いた雰囲気でこだわりの抹茶がいただけて最高な空間です。ほうじ茶玄米茶、鹿児島抹茶ラテを頂きましたが<span class="hl">どちらもおいしかったです◎</span> 写真映えも出来るし、健康に良いしみなさまにおすすめできます！ ソーダ割りやいちごとの組み合わせもあってきになっているのでまた頂きたいです♪</p>
+        <div class="who">Google クチコミより</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INFO ================= -->
+<section class="sec" id="info">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="label en">Shop Information</span>
+      <h2>店舗情報</h2>
+    </div>
+    <div class="info-grid">
+      <div>
+        <div class="panel rv">
+          <h3>Outline</h3>
+          <dl class="dl">
+            <dt>店名</dt><dd>茶屋Matcha －抹茶スタンド－<br><span style="font-size:11px;letter-spacing:.16em;color:var(--matcha-300)">ORGANIC MATCHA CAFE</span></dd>
+            <dt>業態</dt><dd>カフェ・喫茶／抹茶スタンド</dd>
+            <dt>エリア</dt><dd>茶屋町エリア</dd>
+            <dt>営業時間</dt><dd>〜 19:00 閉店<br><span style="font-size:11.5px;opacity:.7">開店時間・定休日は最新情報をご確認ください</span></dd>
+            <dt>予算</dt><dd>￥1〜1,000</dd>
+            <dt>駐車場</dt><dd>近隣の有料駐車場をご利用ください</dd>
+          </dl>
+        </div>
+        <div class="panel rv">
+          <h3>Service</h3>
+          <div class="chips">
+            <span class="chip">イートイン</span>
+            <span class="chip">テイクアウト</span>
+            <span class="chip">店先受取可</span>
+            <span class="chip">宅配</span>
+            <span class="chip">実店舗の営業</span>
+            <span class="chip">コーヒーあり</span>
+          </div>
+          <p class="foot-note" style="margin-top:20px">雰囲気：今っぽい／特徴：コーヒーがおいしい</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel rv">
+          <h3>Payment ／ 決済方法</h3>
+          <div class="chips">
+            <span class="chip">クレジットカード</span>
+            <span class="chip">交通系ICカード</span>
+            <span class="chip">PayPay</span>
+            <span class="chip">d払い</span>
+            <span class="chip">au PAY</span>
+            <span class="chip">楽天ペイ</span>
+          </div>
+        </div>
+        <div class="panel rv">
+          <h3>Accessibility ／ バリアフリー</h3>
+          <div class="chips">
+            <span class="chip">車椅子対応の入り口</span>
+            <span class="chip no">車椅子対応のトイレ</span>
+            <span class="chip no">車椅子対応の座席</span>
+            <span class="chip no">車椅子対応の駐車場</span>
+            <span class="chip no">集団補聴用のヒアリングループ</span>
+          </div>
+          <p class="foot-note">
+            掲載内容は取材時点の情報です。メニュー・価格・営業時間は変更になる場合がございます。<br>
+            最新の情報は店頭または公式SNSをご確認ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">茶屋 Matcha</div>
+    <div class="fen en">100% Organic Matcha Stand</div>
+    <div class="copy">© <span id="yr"></span> 茶屋Matcha. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// sticky header border
+const hd = document.getElementById('hd');
+addEventListener('scroll', () => hd.classList.toggle('stuck', scrollY > 12), {passive:true});
+
+// reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+}, {threshold:.15, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach((el, i) => {
+  el.style.transitionDelay = (i % 3) * 90 + 'ms';
+  io.observe(el);
+});
+</script>
+</body>
+</html>
